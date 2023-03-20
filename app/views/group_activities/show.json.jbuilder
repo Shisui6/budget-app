@@ -1,1 +1,1 @@
-json.partial! "group_activities/group_activity", group_activity: @group_activity
+json.partial! 'group_activities/group_activity', group_activity: @group_activity

@@ -12,94 +12,92 @@ require 'rails_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/activities", type: :request do
-  
+RSpec.describe '/activities', type: :request do
   # This should return the minimal set of attributes required to create a valid
   # Activity. As you add validations to Activity, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) do
+    skip('Add a hash of attributes valid for your model')
+  end
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  let(:invalid_attributes) do
+    skip('Add a hash of attributes invalid for your model')
+  end
 
-  describe "GET /index" do
-    it "renders a successful response" do
+  describe 'GET /index' do
+    it 'renders a successful response' do
       Activity.create! valid_attributes
       get activities_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /show" do
-    it "renders a successful response" do
+  describe 'GET /show' do
+    it 'renders a successful response' do
       activity = Activity.create! valid_attributes
       get activity_url(activity)
       expect(response).to be_successful
     end
   end
 
-  describe "GET /new" do
-    it "renders a successful response" do
+  describe 'GET /new' do
+    it 'renders a successful response' do
       get new_activity_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /edit" do
-    it "renders a successful response" do
+  describe 'GET /edit' do
+    it 'renders a successful response' do
       activity = Activity.create! valid_attributes
       get edit_activity_url(activity)
       expect(response).to be_successful
     end
   end
 
-  describe "POST /create" do
-    context "with valid parameters" do
-      it "creates a new Activity" do
-        expect {
+  describe 'POST /create' do
+    context 'with valid parameters' do
+      it 'creates a new Activity' do
+        expect do
           post activities_url, params: { activity: valid_attributes }
-        }.to change(Activity, :count).by(1)
+        end.to change(Activity, :count).by(1)
       end
 
-      it "redirects to the created activity" do
+      it 'redirects to the created activity' do
         post activities_url, params: { activity: valid_attributes }
         expect(response).to redirect_to(activity_url(Activity.last))
       end
     end
 
-    context "with invalid parameters" do
-      it "does not create a new Activity" do
-        expect {
+    context 'with invalid parameters' do
+      it 'does not create a new Activity' do
+        expect do
           post activities_url, params: { activity: invalid_attributes }
-        }.to change(Activity, :count).by(0)
+        end.to change(Activity, :count).by(0)
       end
 
-    
+
       it "renders a response with 422 status (i.e. to display the 'new' template)" do
         post activities_url, params: { activity: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
       end
-    
     end
   end
 
-  describe "PATCH /update" do
-    context "with valid parameters" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
+  describe 'PATCH /update' do
+    context 'with valid parameters' do
+      let(:new_attributes) do
+        skip('Add a hash of attributes valid for your model')
+      end
 
-      it "updates the requested activity" do
+      it 'updates the requested activity' do
         activity = Activity.create! valid_attributes
         patch activity_url(activity), params: { activity: new_attributes }
         activity.reload
-        skip("Add assertions for updated state")
+        skip('Add assertions for updated state')
       end
 
-      it "redirects to the activity" do
+      it 'redirects to the activity' do
         activity = Activity.create! valid_attributes
         patch activity_url(activity), params: { activity: new_attributes }
         activity.reload
@@ -107,26 +105,24 @@ RSpec.describe "/activities", type: :request do
       end
     end
 
-    context "with invalid parameters" do
-    
+    context 'with invalid parameters' do
       it "renders a response with 422 status (i.e. to display the 'edit' template)" do
         activity = Activity.create! valid_attributes
         patch activity_url(activity), params: { activity: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
       end
-    
     end
   end
 
-  describe "DELETE /destroy" do
-    it "destroys the requested activity" do
+  describe 'DELETE /destroy' do
+    it 'destroys the requested activity' do
       activity = Activity.create! valid_attributes
-      expect {
+      expect do
         delete activity_url(activity)
-      }.to change(Activity, :count).by(-1)
+      end.to change(Activity, :count).by(-1)
     end
 
-    it "redirects to the activities list" do
+    it 'redirects to the activities list' do
       activity = Activity.create! valid_attributes
       delete activity_url(activity)
       expect(response).to redirect_to(activities_url)
