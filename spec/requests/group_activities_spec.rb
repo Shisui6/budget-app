@@ -76,7 +76,6 @@ RSpec.describe '/group_activities', type: :request do
         end.to change(GroupActivity, :count).by(0)
       end
 
-
       it "renders a response with 422 status (i.e. to display the 'new' template)" do
         post group_activities_url, params: { group_activity: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
