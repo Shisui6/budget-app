@@ -1,32 +1,31 @@
-<%= form_with(model: group) do |form| %>
-  <% if group.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
+<div class="login">
+  <div class="login-form">
+    <%= form_with(model: group) do |form| %>
+      <% if group.errors.any? %>
+        <div style="color: red">
+          <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
 
-      <ul>
-        <% group.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <ul>
+            <% group.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+      <div>
+        <%= form.label :name, style: "display: block" %>
+        <%= form.select :name, @categories, { :include_blank => '-- Select One --' }, required: true %>
+      </div>
+
+      <div>
+        <%= form.submit 'Add category' %>
+      </div>
+
+      <%= link_to "< Back", groups_path, class: 'back' %>
+    <% end %>
   </div>
-
   <div>
-    <%= form.label :icon, style: "display: block" %>
-    <%= form.text_field :icon %>
-  </div>
-
+    <%= image_tag ("new-category.jpg") %>
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
