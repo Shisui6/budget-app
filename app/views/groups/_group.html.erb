@@ -5,16 +5,13 @@
   <div class="group-desc">
     <h2><%= group.name %></h2>
     <div class="group-links">
-      <a href=<%= group_path(group) %> id="group-open">
+      <a href=<%= "/groups/#{group.id}/activities" %> id="group-open">
         <i class="fa-solid fa-door-open"></i>
-      </a>
-      <a href=<%= edit_group_path(group) %> id="group-edit">
-        <i class="fa-solid fa-pen-to-square"></i>
       </a>
       <a href=<%= group_path(group) %> data-turbo-method="delete" id="group-delete">
         <i class="fa-solid fa-trash-can"></i>
       </a>
     </div>
-    <p>Total spent: $250</p>
+    <p>Total spent: $ <%= group.total %></p>
   </div>
 </div>

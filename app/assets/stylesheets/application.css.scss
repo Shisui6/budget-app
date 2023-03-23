@@ -224,7 +224,7 @@ header {
   padding: 0 20px;
   background-color: #3678c2;
   color: #fff;
-  margin-bottom: 50px;
+  margin-bottom: 0;
 }
 
 /* ------------------ Empty ----------------- */
@@ -240,6 +240,10 @@ header {
   margin-bottom: 20px;
 }
 
+.empty p {
+  margin-bottom: 50px;
+}
+
 /* ------------------ Categories ----------------- */
 
 .categories-button {
@@ -252,6 +256,7 @@ header {
   border-radius: 10px;
   color: #fff;
   text-decoration: none;
+  transition: 0.3s;
 }
 
 .categories-button:hover {
@@ -260,6 +265,7 @@ header {
 
 #groups {
   margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .group {
@@ -310,7 +316,7 @@ header {
 .group-links {
   display: flex;
   justify-content: space-between;
-  width: 65%;
+  width: 40%;
   align-items: center;
 }
 
@@ -340,4 +346,36 @@ header {
 
 #group-delete:hover {
   background-color: #df121b;
+}
+
+/* ------------------ Activities ----------------- */
+
+.activities-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 50px;
+}
+
+.activity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 15px 25px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
+
+.activity-name {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+#activities {
+  margin-bottom: 50px;
 }

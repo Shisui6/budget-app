@@ -4,7 +4,14 @@ class ActivitiesController < ApplicationController
 
   # GET /activities or /activities.json
   def index
-    @activities = Activity.all
+    @page = 'Transactions'
+    @group = Group.find(params[:group_id])
+    @group_activities = GroupActivity.where(group_id: params[:group_id]).order('created_at DESC')
+    @activities = []
+    @group_activities.each do |a|
+      activity = Activity.find(a.activity_id)
+      @activities << activity
+    end
   end
 
   # GET /activities/1 or /activities/1.json
@@ -12,6 +19,10 @@ class ActivitiesController < ApplicationController
 
   # GET /activities/new
   def new
+    @page = 'New Transaction'
+    @id = params[:group_id]
+    @name = Group.find(params[:group_id]).name
+    puts @group.inspect
     @activity = Activity.new
   end
 
@@ -21,10 +32,13 @@ class ActivitiesController < ApplicationController
   # POST /activities or /activities.json
   def create
     @activity = Activity.new(activity_params)
+    @group_activity = GroupActivity.new(group: Group.find(params[:group_id]), activity: @activity)
 
     respond_to do |format|
-      if @activity.save
-        format.html { redirect_to activity_url(@activity), notice: 'Activity was successfully created.' }
+      if @activity.save && @group_activity.save
+        format.html do
+          redirect_to "/groups/#{params[:group_id]}/activities", notice: 'Transaction was successfully created.'
+        end
         format.json { render :show, status: :created, location: @activity }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -65,6 +79,6 @@ class ActivitiesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def activity_params
-    params.require(:activity).permit(:name, :amount, :user_id)
+    params.require(:activity).permit(:name, :amount).merge(user: current_user)
   end
 end
