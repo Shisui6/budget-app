@@ -1,17 +1,8 @@
-<div id="<%= dom_id activity %>">
-  <p>
-    <strong>Name:</strong>
-    <%= activity.name %>
-  </p>
+<div id="<%= dom_id activity %>" class="activity">
+  <div class="activity-name">
+    <%= image_tag ("transaction.png") %>
+    <p><%= activity.name %></p>
+  </div>
 
-  <p>
-    <strong>Amount:</strong>
-    <%= activity.amount %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= activity.user_id %>
-  </p>
-
+  <p>$ <%= activity.amount %></p>
 </div>

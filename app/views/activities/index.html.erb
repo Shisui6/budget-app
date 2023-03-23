@@ -1,14 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Activities</h1>
-
-<div id="activities">
-  <% @activities.each do |activity| %>
-    <%= render activity %>
-    <p>
-      <%= link_to "Show this activity", activity %>
-    </p>
-  <% end %>
+<div class="activities-total">
+  <h2><%= @group.name %></h2>
+  <h2>$ <%= @group.total %></h2>
 </div>
 
-<%= link_to "New activity", new_activity_path %>
+<% if @activities.length.zero? %> 
+  <div class="empty">
+    <%= image_tag ("empty.png") %>
+    <p>No transactions yet for this category. Add a transaction to see it here</p>
+  </div>
+<% else %>
+  <div id="activities">
+    <% @activities.each do |activity| %>
+      <%= render activity %>
+    <% end %>
+  </div>
+<% end %>
+
+<%= link_to "New Transaction", "/groups/#{@group.id}/activities/new", class: 'categories-button' %>

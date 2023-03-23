@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root "welcome#index"
   
   resources :group_activities
-  resources :activities
-  resources :groups
+  resources :groups do
+    resources :activities
+  end
 end

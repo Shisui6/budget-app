@@ -13,15 +13,27 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
       <header>
-        <i class="fa-solid fa-bars"></i>
-        <h2><%= @page %></h2>
-        <a href=<%= destroy_user_session_path %> data-turbo-method="delete">
-          <i class="fa-solid fa-right-from-bracket" style="color: #fff;"></i>
-        </a>
+        <% if request.env['PATH_INFO'] == groups_path || request.env['PATH_INFO'] == new_user_session_path || request.env['PATH_INFO'] == new_user_registration_path %>
+          <i class="fa-solid fa-bars"></i>
+        <% else %>
+          <%= link_to "Back", :back, style: "color: #fff; text-decoration: none;" %>
+        <% end %>
+        <% if request.env['PATH_INFO'] == new_user_session_path %>
+          <h2>LOGIN</h2>
+        <% elsif request.env['PATH_INFO'] == new_user_registration_path %>
+          <h2>REGISTER</h2>
+        <% else %>
+          <h2><%= @page %></h2>
+        <% end %>
+        <% if user_signed_in? %>
+          <a href=<%= destroy_user_session_path %> data-turbo-method="delete">
+            <i class="fa-solid fa-right-from-bracket" style="color: #fff;"></i>
+          </a>
+        <% else %>
+          <p></p>
+        <% end %>
       </header>
-    <% end %>
 
     <% if notice %>
       <p class="notice"><%= notice %></p>
