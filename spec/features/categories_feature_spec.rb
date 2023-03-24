@@ -11,7 +11,7 @@ describe 'Categories page', type: :system do
   end
 
   scenario 'index page' do
-    expect(page).to have_text "Categories"
+    expect(page).to have_text 'Categories'
     expect(page).to have_link 'New Category'
     expect(page).to have_current_path groups_path
   end
