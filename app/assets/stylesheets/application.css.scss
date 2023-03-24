@@ -2,11 +2,18 @@
 
 @import "font-awesome";
 
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: bold;
+  src: url('/assets/fonts/5475-font.ttf') format('ttf');
+}
+
 /* ------------------ All ----------------- */
 
 * {
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Proxima Nova', sans-serif;
 }
 
 /* ------------------ Body ----------------- */
