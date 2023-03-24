@@ -3,7 +3,7 @@ class CreateActivities < ActiveRecord::Migration[7.0]
     create_table :activities do |t|
       t.string :name
       t.float :amount
-      t.references :user, null: false, foreign_key: true, index: true
+      t.references :author, null: false, foreign_key: { to_table: 'users' }
 
       t.timestamps
     end

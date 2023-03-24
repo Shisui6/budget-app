@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Activity, type: :model do
   user = User.create(name: 'test', email: 'test@gmail.com', password: 'qwerty')
-  subject { Activity.create(user_id: user.id, name: 'test', amount: 0) }
+  subject { Activity.create(author_id: user.id, name: 'test', amount: 0) }
 
   before { subject.save }
 

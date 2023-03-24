@@ -260,16 +260,16 @@ header {
 /* ------------------ Categories ----------------- */
 
 .categories-button {
-  width: fit-content;
   display: block;
   text-align: center;
-  margin: 0 auto 30px;
-  padding: 10px 20px;
+  padding: 20px;
   background-color: #5fb523;
-  border-radius: 10px;
   color: #fff;
   text-decoration: none;
   transition: 0.3s;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .categories-button:hover {
@@ -322,8 +322,8 @@ header {
   margin-bottom: 10px;
 }
 
-.group h5 {
-  margin-bottom: 0;
+.group p {
+  font-size: 13px;
 }
 
 .group-links {
@@ -406,4 +406,34 @@ header {
 
 #signup-btn:hover {
   color: burlywood;
+}
+
+@media screen and (max-width: 768px) {
+  .group {
+    grid-template-rows: 100px;
+    margin: 30px 20px;
+  }
+
+  .group h2 {
+    font-size: 25px;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .group-links {
+    width: 80%;
+  }
+
+  .group a {
+    padding: 5px 7px;
+  }
+
+  .login {
+    margin: 60px 40px;
+    grid-template-columns: 1fr;
+  }
+
+  .activity {
+    margin: 0 20px;
+  }
 }

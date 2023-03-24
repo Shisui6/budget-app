@@ -1,5 +1,5 @@
 class Activity < ApplicationRecord
-  belongs_to :user
+  belongs_to :author, class_name: 'User'
   has_many :group_activities, dependent: :destroy
   has_many :groups, through: :group_activities
 
