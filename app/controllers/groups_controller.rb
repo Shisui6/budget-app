@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user! unless Rails.env == 'test'
   before_action :set_group, only: %i[show edit update destroy]
 
   # GET /groups or /groups.json

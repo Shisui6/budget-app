@@ -4,4 +4,5 @@ class Activity < ApplicationRecord
   has_many :groups, through: :group_activities
 
   validates :name, :amount, presence: true
+  validates :amount, comparison: { greater_than_or_equal_to: 0 }
 end
