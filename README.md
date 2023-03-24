@@ -23,8 +23,8 @@
 
 # 📖 Budget App <a name="about-project"></a>
 
-**Budget App** is a Ruby on Rails project designed to help you keep track of all you favorite recipes. Go ahead and sign up to start saving recipes, making shopping lists and viewing recipes created by other users
-![image](https://user-images.githubusercontent.com/37116322/225946972-01aa554c-8e5f-413b-ab68-5593fe107902.png)
+**Budget App** is a Ruby on Rails project designed to help you monitor you spending habits. Go ahead and sign up to start organizing your transactions, monitoring your total spend and keeping track of your budget.
+![image](https://user-images.githubusercontent.com/37116322/227475869-b7d5a681-5d1f-4c07-8f69-8e7c957f2579.png)
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -58,11 +58,9 @@
 ### Key Features <a name="key-features"></a>
 
 - User authentication
-- Users can create and view recipes
-- Users can create and view food items
-- Users can add food items to recipes
-- Users can generate shopping lists based on ingredients
-- Users can view recipes that are public
+- Users can create and view transaction categories
+- Users can create and view transactions
+- Users can monitor total spend on each category
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
