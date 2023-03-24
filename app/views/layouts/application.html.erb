@@ -16,7 +16,7 @@
         <% if request.env['PATH_INFO'] == groups_path || request.env['PATH_INFO'] == new_user_session_path || request.env['PATH_INFO'] == new_user_registration_path %>
           <i class="fa-solid fa-bars"></i>
         <% else %>
-          <%= link_to "Back", :back, style: "color: #fff; text-decoration: none;" %>
+          <i class="fa-solid fa-arrow-left"></i>
         <% end %>
         <% if request.env['PATH_INFO'] == new_user_session_path %>
           <h2>LOGIN</h2>

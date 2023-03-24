@@ -392,3 +392,18 @@ header {
 #activities {
   margin-bottom: 50px;
 }
+
+#signup-btn {
+  padding: 10px 20px;
+  display: flex;
+  gap: 10px;
+  margin: 0 auto;
+  width: fit-content;
+  color: initial;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+#signup-btn:hover {
+  color: burlywood;
+}
