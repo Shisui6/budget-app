@@ -1,0 +1,16 @@
+<div class="categories-index">
+  <% if @groups.length.zero? %> 
+    <div class="empty">
+      <%= image_tag ("empty.png") %>
+      <p>You don't have any categories saved. Create a category to see it here</p>
+    </div>
+  <% else %>
+    <div id="groups">
+      <% @groups.each do |group| %>
+        <%= render group %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= link_to "New Category", new_group_path, class: 'categories-button' %>
+</div>

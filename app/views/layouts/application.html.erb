@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BudgetApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= favicon_link_tag asset_path('favicon.png') %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <% if request.env['PATH_INFO'] != root_path %>
+      <header>
+        <% if request.env['PATH_INFO'] == groups_path || request.env['PATH_INFO'] == new_user_session_path || request.env['PATH_INFO'] == new_user_registration_path %>
+          <i class="fa-solid fa-bars"></i>
+        <% else %>
+          <i class="fa-solid fa-arrow-left"></i>
+        <% end %>
+        <% if request.env['PATH_INFO'] == new_user_session_path %>
+          <h2>LOGIN</h2>
+        <% elsif request.env['PATH_INFO'] == new_user_registration_path %>
+          <h2>REGISTER</h2>
+        <% else %>
+          <h2><%= @page %></h2>
+        <% end %>
+        <% if user_signed_in? %>
+          <a href=<%= destroy_user_session_path %> data-turbo-method="delete">
+            <i class="fa-solid fa-right-from-bracket" style="color: #fff;"></i>
+          </a>
+        <% else %>
+          <p></p>
+        <% end %>
+      </header>
+    <% end %>
+
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

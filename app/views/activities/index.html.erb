@@ -1,0 +1,20 @@
+<div class="activities-total">
+  <h2><%= @group.name %></h2>
+  <h2>$ <%= @group.total %></h2>
+</div>
+
+<% if @activities.length.zero? %> 
+  <div class="empty">
+    <%= image_tag ("empty.png") %>
+    <p>No transactions yet for this category. Add a transaction to see it here</p>
+  </div>
+<% else %>
+  <div id="activities">
+    <% @activities.each do |activity| %>
+      <%= render activity %>
+    <% end %>
+  </div>
+<% end %>
+
+<%= link_to "New Transaction", "/groups/#{@group.id}/activities/new", class: 'categories-button' %>
+<a href=<%= groups_path %> id="signup-btn">Back <i class="fa-solid fa-arrow-left"></i></i></a>

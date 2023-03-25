@@ -1,0 +1,439 @@
+/* ------------------ Imports ----------------- */
+
+@import "font-awesome";
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: bold;
+  src: url('/assets/fonts/5475-font.ttf') format('ttf');
+}
+
+/* ------------------ All ----------------- */
+
+* {
+  box-sizing: border-box;
+  font-family: 'Proxima Nova', sans-serif;
+}
+
+/* ------------------ Body ----------------- */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------ Login ----------------- */
+
+.login {
+  margin: 60px 100px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 80vh;
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+}
+
+.log {
+  background-color: #f5f6f8;
+  height: 100vh;
+  text-align: center;
+}
+
+.log a {
+  text-decoration: none;
+  color: #c6c8ca;
+}
+
+.log input {
+  width: 100%;
+  border: none;
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+.log input[type="submit"] {
+  background-color: #3678c2;
+  display: block;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 30%;
+  margin: 30px auto;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.login-form input[type="submit"] {
+  background-color: black;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.log input[type="submit"]:hover {
+  background-color: #2d619d;
+}
+
+.login img {
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.login-form h2 {
+  font-size: 1.7rem;
+}
+
+.login-form form {
+  width: 70%;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"],
+.login-form input[type="text"],
+.login-form input[type="number"],
+textarea,
+select {
+  width: 100%;
+  margin: 10px 0;
+  border: 2px solid #f6f3f0;
+  padding: 10px;
+}
+
+.login-form input[type="submit"]:hover {
+  background-color: #f6f3f0;
+  color: #000;
+}
+
+.login-remember {
+  display: flex;
+}
+
+/* ------------------ Signup ----------------- */
+
+#signup {
+  padding-top: 30px;
+}
+
+#signup input {
+  padding: 5px;
+}
+
+#signup input[type="submit"] {
+  padding: 10px;
+}
+
+/* ------------------ Alerts ----------------- */
+
+.alert {
+  width: 20%;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #f8d7da;
+  color: #842029;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.notice {
+  width: 20%;
+  left: 40%;
+  top: 35px;
+  position: absolute;
+  padding: 10px;
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 14px;
+  animation: slide 2s alternate;
+  transform: translateY(-100%);
+  z-index: -1;
+}
+
+@keyframes slide {
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ------------------ Root page ----------------- */
+
+.experience {
+  height: 100vh;
+  padding: 140px 150px 0;
+  text-align: center;
+}
+
+.experience h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 100px;
+}
+
+.experience button {
+  background: none;
+  outline: none;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  width: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.experience a {
+  text-decoration: none;
+  color: #000;
+}
+
+.group a {
+  padding: 8px 10px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+#experience-login {
+  color: #fff;
+  background-color: #3678c2;
+}
+
+#experience-login a {
+  color: #fff;
+}
+
+#experience-login:hover {
+  background-color: #2d619d;
+}
+
+/* ------------------ Navbar ----------------- */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 20px;
+  background-color: #3678c2;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+/* ------------------ Empty ----------------- */
+
+.empty {
+  text-align: center;
+  padding-top: 100px;
+}
+
+.empty img {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 20px;
+}
+
+.empty p {
+  margin-bottom: 50px;
+}
+
+/* ------------------ Categories ----------------- */
+
+.categories-button {
+  display: block;
+  text-align: center;
+  padding: 20px;
+  background-color: #5fb523;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.categories-button:hover {
+  background-color: #0f5132;
+}
+
+#groups {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.group {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 200px;
+  gap: 40px;
+  margin: 30px 250px;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.back {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.back:hover {
+  color: #3678c2;
+}
+
+.group-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.group img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.group h2 {
+  font-size: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.group p {
+  font-size: 13px;
+}
+
+.group-links {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  align-items: center;
+}
+
+.group a i {
+  color: #fff;
+}
+
+#group-open {
+  border: 2px solid #3678c2;
+}
+
+#group-open:hover {
+  background-color: #3678c2;
+}
+
+#group-edit {
+  border: 2px solid #bab9b9;
+}
+
+#group-edit:hover {
+  background-color: #bab9b9;
+}
+
+#group-delete {
+  border: 2px solid #df121b;
+}
+
+#group-delete:hover {
+  background-color: #df121b;
+}
+
+/* ------------------ Activities ----------------- */
+
+.activities-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 50px;
+}
+
+.activity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 15px 25px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
+
+.activity-name {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+#activities {
+  margin-bottom: 50px;
+}
+
+#signup-btn {
+  padding: 10px 20px;
+  display: flex;
+  gap: 10px;
+  margin: 0 auto;
+  width: fit-content;
+  color: initial;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+#signup-btn:hover {
+  color: burlywood;
+}
+
+@media screen and (max-width: 768px) {
+  .group {
+    grid-template-rows: 100px;
+    margin: 30px 20px;
+  }
+
+  .group h2 {
+    font-size: 25px;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .group-links {
+    width: 80%;
+  }
+
+  .group a {
+    padding: 5px 7px;
+  }
+
+  .login {
+    margin: 60px 40px;
+    grid-template-columns: 1fr;
+  }
+
+  .activity {
+    margin: 0 20px;
+  }
+}
